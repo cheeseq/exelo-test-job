@@ -1,5 +1,5 @@
 init:
-	@cp .env.example .env
+	@cp .env-example .env
 	@cp docker-compose-example.yml docker-compose.yml
 	@cd ./build && docker-compose build
 	@docker-compose up -d
