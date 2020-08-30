@@ -1,5 +1,6 @@
 $(function () {
-  const chat = new WebSocket('ws://localhost:8081');
+  const hostname = window.location.hostname;
+  const chat = new WebSocket(`ws://${hostname}:8081`);
   
   const currentChatUsername = $('#send_chat_username').val();
   const messagesContainer = $('.msg_history');
@@ -28,6 +29,10 @@ $(function () {
   };
   
   scrollChatToBottom();
+
+  chat.onerror = (e) => {
+    alert("Error connecting to websocket!");
+  };
   
   chat.onmessage = (e) => {
     let response = JSON.parse(e.data);
