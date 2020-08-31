@@ -58,6 +58,8 @@ class ChatServer extends WebSocketServer
                 $client->send( json_encode($result) );
             }
         }
+
+        \Yii::$app->db->close();
     }
 
     private function broadcastMessage($message)
