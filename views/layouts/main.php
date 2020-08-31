@@ -26,12 +26,6 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-        <p class="pull-left">&copy; cheeseq <?= date('Y') ?></p>
-        </div>
-    </footer>
-
     <?php $this->endBody() ?>
 </body>
 </html>
