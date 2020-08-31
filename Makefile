@@ -8,3 +8,7 @@ init:
 	@docker-compose exec web chgrp www-data web/assets runtime var/sessions
 	@docker-compose exec web chmod g+rwx web/assets runtime var/sessions
 	@docker-compose exec web ./yii websocket-server/start &
+
+run:
+	@docker-compose up -d
+	@docker-compose exec web ./yii websocket-server/start &
